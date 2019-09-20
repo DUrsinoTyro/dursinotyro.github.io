@@ -15,40 +15,40 @@
             }
 
             Checkout.configure({
-                merchant: 'TYRO_294',
-                order: {
-                    amount: 100,
-                    currency: 'AUD',
-                    description: 'Ordered goods',
-                    id: '04535078527681371203'
-                },
-                 billing    : {
+    merchant: 'TYRO_294',
+    order: {
+        amount: 10
+        currency: 'AUD',
+        description: 'Ordered goods',
+        id: '89758081162344792545'
+    },
+    billing: {
         address: {
-            street       : '123 Customer Street',
-            city         : 'Metropolis',
-            postcodeZip  : '99999',
+            street: '123 Customer Street',
+            city: 'Metropolis',
+            postcodeZip: '99999',
             stateProvince: 'NY',
-            country      : 'USA'
+            country: 'USA'
         }
     },
     interaction: {
-        merchant      : {
-            name   : 'Your merchant name',
+        merchant: {
+            name: 'Your merchant name',
             address: {
-                          line1: '200 Sample St',
-                          line2: '1234 Example Town'            
+                line1: '200 Sample St',
+                line2: '1234 Example Town'
             },
-            email  : 'order@yourMerchantEmailAddress.com',
-            phone  : '+1 123 456 789 012',
-            logo   : 'https://2n18ua1tyz6r3kfqtckmdy45-wpengine.netdna-ssl.com/wp-content/themes/tyro/assets/img/logo.png'
+            email: 'order@yourMerchantEmailAddress.com',
+            phone: '+1 123 456 789 012',
+            logo: 'https://2n18ua1tyz6r3kfqtckmdy45-wpengine.netdna-ssl.com/wp-content/themes/tyro/assets/img/logo.png'
         },
-        locale        : 'en_US',
-        theme         : 'default',
+        locale: 'en_US',
+        theme: 'default',
         displayControl: {
-            billingAddress  : 'OPTIONAL',
-            customerEmail   : 'OPTIONAL',
-            orderSummary    : 'SHOW',
-            shipping        : 'HIDE'
+            billingAddress: 'OPTIONAL',
+            customerEmail: 'OPTIONAL',
+            orderSummary: 'HIDE',
+            shipping: 'HIDE'
         }
     }
 });
