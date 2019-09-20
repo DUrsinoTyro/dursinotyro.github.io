@@ -14,22 +14,24 @@
             }
 
             Checkout.configure({
-                merchant: 'TYRO_294',
+                merchant: ’TYRO_294’,
                 order: {
-                    amount: 100
+                    amount: function() {
+                        //Dynamic calculation of amount
+                        return 80 + 20;
                     },
-                    currency: 'AUD',
+                    currency: ‘AUD’,
                     description: 'Ordered goods',
                    id: '5cf67e2dfd8f470dbe8fd7acdeaa75b6'
                 },
                 interaction: {
-                    operation: 'PURCHASE', // set this field to 'PURCHASE' for Hosted Checkout to perform a Pay Operation.
+                    operation: 'AUTHORIZE', // set this field to 'PURCHASE' for Hosted Checkout to perform a Pay Operation.
                     merchant: {
-                        name: 'TEST',
+                        name: 'Your merchant name',
                         address: {
                             line1: '200 Sample St',
-                            line2: '1234 Example Town'
-                        }
+                            line2: '1234 Example Town'            
+                        }    
                     }
                                                                 }
             });
@@ -37,6 +39,7 @@
     </head>
     <body>
         ...
+        <input type="button" value="Pay with Lightbox" onclick="Checkout.showLightbox();" />
         <input type="button" value="Pay with Payment Page" onclick="Checkout.showPaymentPage();" />
         ...
     </body>
