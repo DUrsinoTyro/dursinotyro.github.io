@@ -23,32 +23,35 @@
                     id: '04535078527681371203'
                 },
                  billing    : {
-                 address: {
-                 street       : '123 Customer Street',
-                 city         : 'Metropolis',
-                 postcodeZip  : '99999',
-                 stateProvince: 'NY',
-                 country      : 'USA'
-                }
-                },
-                interaction: {
-                    operation: 'PURCHASE', // set this field to 'PURCHASE' for Hosted Checkout to perform a Pay Operation.
-                    merchant: {
-                        name: 'Your merchant name',
-                        address: {
-                            line1: '200 Sample St',
-                            line2: '1234 Example Town'            
-                        },
-                        locale        : 'en_US',
-                        theme         : 'default',
-                        displayControl: {
-                        billingAddress  : 'HIDE',
-                        customerEmail   : 'HIDE',
-                        orderSummary    : 'HIDE',
-                        shipping        : 'HIDE'
-                    }
-            }
-       });
+        address: {
+            street       : '123 Customer Street',
+            city         : 'Metropolis',
+            postcodeZip  : '99999',
+            stateProvince: 'NY',
+            country      : 'USA'
+        }
+    },
+    interaction: {
+        merchant      : {
+            name   : 'Your merchant name',
+            address: {
+                          line1: '200 Sample St',
+                          line2: '1234 Example Town'            
+            },
+            email  : 'order@yourMerchantEmailAddress.com',
+            phone  : '+1 123 456 789 012',
+            logo   : 'https://2n18ua1tyz6r3kfqtckmdy45-wpengine.netdna-ssl.com/wp-content/themes/tyro/assets/img/logo.png'
+        },
+        locale        : 'en_US',
+        theme         : 'default',
+        displayControl: {
+            billingAddress  : 'OPTIONAL',
+            customerEmail   : 'OPTIONAL',
+            orderSummary    : 'SHOW',
+            shipping        : 'HIDE'
+        }
+    }
+});
         </script>
     </head>
     <body>
