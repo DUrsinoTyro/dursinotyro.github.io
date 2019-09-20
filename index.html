@@ -25,22 +25,22 @@
     billing: {
         address: {
             street: '123 Customer Street',
-            city: 'Metropolis',
-            postcodeZip: '99999',
-            stateProvince: 'NY',
-            country: 'USA'
+            city: 'Sydney',
+            postcodeZip: '2000',
+            stateProvince: 'NSW',
+            country: 'AU'
         }
     },
     interaction: {
         operation: 'PURCHASE',
         merchant: {
-            name: 'Your merchant name',
+            name: 'Tyro Payments',
             address: {
-                line1: '200 Sample St',
-                line2: '1234 Example Town'
+                line1: 'Level 1',
+                line2: '155 Clarence Street, Sydney, NSW, 2000'
             },
-            email: 'order@yourMerchantEmailAddress.com',
-            phone: '+1 123 456 789 012',
+            email: 'dursino@tyro.com',
+            phone: '+61 1300 966 639',
             logo: 'https://web.costar.com.au/wp-content/uploads/2018/01/Tyro-reseized-small.jpg'
         },
         locale: 'en_US',
@@ -57,7 +57,6 @@
     </head>
     <body>
         ...
-        <input type="button" value="Pay with Lightbox" onclick="Checkout.showLightbox();" />
         <input type="button" value="Pay with Payment Page" onclick="Checkout.showPaymentPage();" />
         ...
     </body>
