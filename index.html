@@ -22,6 +22,15 @@
                     description: 'Ordered goods',
                     id: '04535078527681371203'
                 },
+                 billing    : {
+                 address: {
+                 street       : '123 Customer Street',
+                 city         : 'Metropolis',
+                 postcodeZip  : '99999',
+                 stateProvince: 'NY',
+                 country      : 'USA'
+                }
+                },
                 interaction: {
                     operation: 'PURCHASE', // set this field to 'PURCHASE' for Hosted Checkout to perform a Pay Operation.
                     merchant: {
@@ -29,10 +38,17 @@
                         address: {
                             line1: '200 Sample St',
                             line2: '1234 Example Town'            
-                        }    
+                        },
+                        locale        : 'en_US',
+                        theme         : 'default',
+                        displayControl: {
+                        billingAddress  : 'HIDE',
+                        customerEmail   : 'HIDE',
+                        orderSummary    : 'HIDE',
+                        shipping        : 'HIDE'
                     }
-                                                                }
-            });
+            }
+       });
         </script>
     </head>
     <body>
