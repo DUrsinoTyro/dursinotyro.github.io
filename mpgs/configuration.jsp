@@ -23,7 +23,7 @@
             configuration.put("gatewayHost", null);
 
             // Base URL of the Payment Gateway. Do not include the version.
-            configuration.put("gatewayUrl", "https://[INSERT-DOMAIN]/api/rest");
+            configuration.put("gatewayUrl", "https://test-tyro.mtf.gateway.mastercard.com/api/rest");
 
             // If no authentication is required, only uncomment proxyServer
             // Server name or IP address and port number of your proxy server
@@ -51,13 +51,13 @@
             configuration.put("version", "13");
 
             // Merchant ID supplied by your payments provider
-            configuration.put("merchantId", "[INSERT-MERCHANT-ID]");
+            configuration.put("merchantId", "TYRO_294");
 
             // API username in the format below where Merchant ID is the same as above
-            configuration.put("apiUsername", "merchant.[INSERT-MERCHANT-ID]");
+            configuration.put("apiUsername", "merchant.TYRO_294");
 
             // API password which can be configured in Merchant Administration
-            configuration.put("password", null);
+            configuration.put("429e1eb5451c11818ca2cd066011c0af", null);
 
             // [Snippet] howToConfigureSslCert - start
             // If using certificate validation, modify the following configuration settings
