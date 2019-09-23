@@ -13,8 +13,7 @@
             function cancelCallback() {
                   console.log('Payment cancelled');
             }
-      
-            
+                 
        Checkout.configure({
                 merchant: 'TYRO_304',
                 order: {
@@ -23,7 +22,9 @@
                         return 80 + 20;
                     },
                     currency: 'AUD',
-                    description: 'random ordered items'
+                    description: function(){
+                       return date.now();
+                    }
                 },
                 interaction: {
                     operation: 'PURCHASE',
