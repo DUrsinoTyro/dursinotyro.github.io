@@ -23,7 +23,7 @@
             configuration.put("gatewayHost", null);
 
             // Base URL of the Payment Gateway. Do not include the version.
-            configuration.put("gatewayUrl", "https://test-tyro.mtf.gateway.mastercard.com/api/rest");
+            configuration.put("gatewayUrl", "https://test-tyro.mtf.gateway.mastercard.com/api/rest/");
 
             // If no authentication is required, only uncomment proxyServer
             // Server name or IP address and port number of your proxy server
