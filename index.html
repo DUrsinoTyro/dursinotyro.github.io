@@ -14,46 +14,27 @@
                   console.log('Payment cancelled');
             }
 
-      Checkout.configure({
-          merchant   : 'TYRO_294',
-    order      : {
-        amount     : function () { //Dynamic calculation of amount
-            return 80 + 20
-        },
-        currency   : 'AUD',
-        description: 'Order 123456789'
-    },
-    billing    : {
-        address: {
-            street       : '123 Customer Street',
-            city         : 'Sydney',
-            postcodeZip  : '2000',
-            stateProvince: 'NSW',
-            country      : 'AUS'
-        }
-    },
-    interaction: {
-        operation: 'PURCHASE',
-        merchant      : {
-            name   : 'Tyro Payments',
-            address: {
-                          line1: '100 Merchant Street',
-                          line2: 'Sydney, NSW, 2000'            
-            },
-            email  : 'merchant@merchant.com.au',
-            phone  : '+61 02 9999 9999',
-            logo   : 'https://i.imgur.com/anPeGr9.jpg'
-        },
-        locale        : 'en_US',
-        theme         : 'default',
-        displayControl: {
-            billingAddress  : 'OPTIONAL',
-            customerEmail   : 'OPTIONAL',
-            orderSummary    : 'HIDE',
-            shipping        : 'HIDE'
-        }
-    }
-});
+       Checkout.configure({
+                merchant: 'TYRO_294',
+                order: {
+                    amount: function() {
+                        //Dynamic calculation of amount
+                        return 80 + 20;
+                    },
+                    currency: 'AUD',
+                    description: 'Ordered goods'
+                },
+                interaction: {
+                    operation: 'PURCHASE',
+                    merchant: {
+                        name: 'Your merchant name',
+                        address: {
+                            line1: '200 Sample St',
+                            line2: '1234 Example Town'
+                        }
+                    }
+                }
+            });
         </script>
     </head>
     <body>
