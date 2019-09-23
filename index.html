@@ -14,13 +14,21 @@
                   console.log('Payment cancelled');
             }
 
-            Checkout.configure({
-    merchant: 'TYRO_294',
-    order: {
-        amount: 100,
+      Checkout.configure({
+     merchant: 'TYRO_294',
+     order: {
+        amount: function() {
+            //Dynamic calculation of amount
+            return 100.00;
+        },
         currency: 'AUD',
-        description: 'TEST 123'
+        description: 'Ordered goods'
     },
+    interaction: {
+        merchant: {
+            name: 'TYRO'
+        }
+    }},
     billing: {
         address: {
             street: '123 Customer Street',
