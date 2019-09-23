@@ -13,13 +13,8 @@
             function cancelCallback() {
                   console.log('Payment cancelled');
             }
-            function makeid(length) {
-  var text = "";
-  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
-  for (var i = 0; i < length; i++)
-    text += possible.charAt(Math.floor(Math.random() * possible.length));
-}
+      
+            
        Checkout.configure({
                 merchant: 'TYRO_294',
                 order: {
@@ -27,9 +22,7 @@
                         //Dynamic calculation of amount
                         return 80 + 20;
                     },
-                    currency: 'AUD',
-                    description: 'function makeid(10){
-                    return text;'
+                    currency: 'AUD'
                     }
                 },
                 interaction: {
