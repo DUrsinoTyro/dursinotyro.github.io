@@ -13,24 +13,26 @@
             function cancelCallback() {
                   console.log('Payment cancelled');
             }
-
+                 
        Checkout.configure({
-                merchant: 'TYRO_294',
+                merchant: 'TYRO_304',
                 order: {
                     amount: function() {
                         //Dynamic calculation of amount
                         return 80 + 20;
                     },
                     currency: 'AUD',
-                    description: 'Random Order TEST item'
+                    description: function(){
+                       return Date.now();
+                    }
                 },
                 interaction: {
                     operation: 'PURCHASE',
                     merchant: {
-                        name: 'Your merchant name',
+                        name: 'Tyro Payments',
                         address: {
-                            line1: '200 Sample St',
-                            line2: '1234 Example Town'
+                            line1: '155 Clarence Street, ',
+                            line2: 'Sydney, NSW, 2000'
                         }
                     }
                 }
