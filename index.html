@@ -15,15 +15,14 @@
             }
 
        Checkout.configure({
-                merchant: 'TYRO_294',
+                merchant: 'HEINEMANN',
                 order: {
                     amount: function() {
                         //Dynamic calculation of amount
                         return 80 + 20;
                     },
                     currency: 'AUD',
-                    description: 'Ordered',
-                    id: '6585686868612323423231'
+                    description: 'Ordered'
                 },
                 interaction: {
                     operation: 'PURCHASE',
