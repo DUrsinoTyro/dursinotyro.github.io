@@ -14,50 +14,35 @@
                   console.log('Payment cancelled');
             }
 
-            Checkout.configure({
-    merchant: 'TYRO_294',
-    order: {
-        amount: 100,
-        currency: 'AUD',
-        description: 'Ordered goods',
-        id: '8975808116234479254589758081162344792545'
-    },
-    billing: {
-        address: {
-            street: '123 Customer Street',
-            city: 'Sydney',
-            postcodeZip: '2000',
-            stateProvince: 'NSW',
-            country: 'AUS'
-        }
-    },
-    interaction: {
-        operation: 'PURCHASE',
-        merchant: {
-            name: 'Tyro Payments',
-            address: {
-                line1: 'Level 1',
-                line2: '155 Clarence Street, Sydney, NSW, 2000'
-            },
-            email: 'dursino@tyro.com',
-            phone: '+61 1300 966 639',
-            logo: 'https://web.costar.com.au/wp-content/uploads/2018/01/Tyro-reseized-small.jpg'
-        },
-        locale: 'en_US',
-        theme: 'default',
-        displayControl: {
-            billingAddress: 'OPTIONAL',
-            customerEmail: 'OPTIONAL',
-            orderSummary: 'HIDE',
-            shipping: 'HIDE'
-        }
-    }
-});
+       Checkout.configure({
+                merchant: 'TYRO_294',
+                order: {
+                    amount: function() {
+                        //Dynamic calculation of amount
+                        return 80 + 20;
+                    },
+                    currency: 'AUD',
+                    description: 'Random Order TEST item'
+                },
+                interaction: {
+                    operation: 'PURCHASE',
+                    merchant: {
+                        name: 'Your merchant name',
+                        address: {
+                            line1: '200 Sample St',
+                            line2: '1234 Example Town'
+                        }
+                    }
+                }
+            });
         </script>
     </head>
     <body>
+       
+        <p><b>PLEASE USE TEST CARD NUMBER: 5111 0100 3017 5156</b></p>
         ...
         <input type="button" value="Pay with Payment Page" onclick="Checkout.showPaymentPage();" />
+        <input type="button" value="Pay with Lightbox" onclick="Checkout.showLightbox();" />
         ...
     </body>
 </html>
