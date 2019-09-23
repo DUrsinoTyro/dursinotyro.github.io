@@ -15,7 +15,6 @@
             }
 
       Checkout.configure({
-          operation: 'PURCHASE',
           merchant   : 'TYRO_294',
     order      : {
         amount     : function () { //Dynamic calculation of amount
@@ -34,6 +33,7 @@
         }
     },
     interaction: {
+        operation: 'PURCHASE',
         merchant      : {
             name   : 'Tyro Payments',
             address: {
