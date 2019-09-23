@@ -22,7 +22,10 @@
                         return 80 + 20;
                     },
                     currency: 'AUD',
-                    description: 'Ordered'
+                    description: 'Ordered',
+                    id: function(){
+                       Math.random().toString(36).substr(2, length) 
+                    }
                 },
                 interaction: {
                     operation: 'PURCHASE',
