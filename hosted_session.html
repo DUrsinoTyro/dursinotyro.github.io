@@ -42,7 +42,6 @@ Email: <input type="text" name="email">
 
 JSONTest = function() {
 
-    var resultDiv = $("#resultDivContainer");
 
     $.ajax({
         url: "https://webhook.site/4eb3174a-87b6-4dff-8e60-892b08a134a6",
@@ -50,9 +49,14 @@ JSONTest = function() {
         data: { apiKey: "23462", method: "example", ip: "208.74.35.5" },
         dataType: "json",
         success: alert("Success!"),
-        error: alert.("Error - Please Try Again")
-        }
-    });
+        error: function(jqXHR,error, errorThrown) {  
+               if(jqXHR.status&&jqXHR.status==400){
+                    alert(jqXHR.responseText); 
+               }else{
+                   alert("Something went wrong");
+               }
+          }
+    }); 
 };
 
 </script>  
