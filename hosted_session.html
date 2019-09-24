@@ -49,14 +49,11 @@ JSONTest = function() {
         data: { apiKey: "23462", method: "example", ip: "208.74.35.5" },
         dataType: "json",
         success: alert("Success!"),
-        error: function(jqXHR,error, errorThrown) {  
-               if(jqXHR.status&&jqXHR.status==400){
-                    alert(jqXHR.responseText); 
-               }else{
-                   alert("Something went wrong");
-               }
-          }
-    }); 
+        error: function (xhr, ajaxOptions, thrownError) {
+        alert(xhr.status);
+        alert(thrownError);
+        }
+    });
 };
 
 </script>  
