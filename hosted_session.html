@@ -98,7 +98,7 @@ PaymentSession.configure({
             // HANDLE RESPONSE FOR UPDATE SESSION
         if (response.status) {
             if ("ok" == response.status) {
-                console.log("Session updated with data: " + response.session.id);
+               alert("Session updated with data: " + response.session.id);
 
                 //check if the security code was provided by the user
                 if (response.sourceOfFunds.provided.card.securityCode) {
