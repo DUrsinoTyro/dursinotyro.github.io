@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<title>My jQuery JSON Web Page</title>
+<head>
+<!-- JS TEST 1 -->
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript">
+JSONTest = function() {
+
+    var resultDiv = $("#resultDivContainer");
+
+    $.ajax({
+        url: "https://test-tyro.mtf.gateway.mastercard.com/api/nvp/version/53",
+        type: "POST",
+        data: 
+        {
+        apiOperation: "PAY", 
+        order: {
+            currency: "AUD"
+            id: TEST1234029A,
+            session.id: SESSION0002122400777L8592306N84
+            }
+        }
+        dataType: "json",
+        success: alert("Sent")
+    });
+};
+</script>  
+<body>
+
+<h1>My jQuery JSON Web Page</h1>
+
+<div id="resultDivContainer"></div>
+
+<button type="button" onclick="JSONTest()">JSON</button>
+
+</body>
+</html> 
