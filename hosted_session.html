@@ -18,29 +18,8 @@
 <div>Security Code:<input type="text" id="security-code" class="input-field" title="security code" aria-label="three digit CCV security code" value="" tabindex="4" readonly></div>
 <div>Cardholder Name:<input type="text" id="cardholder-name" class="input-field" title="cardholder name" aria-label="enter name on card" value="" tabindex="5" readonly></div>
 <div><button id="payButton" onclick="pay('card');">Pay Now</button></div>
+<div><button type="button" onclick="JSONTest()">JSON</button></div>
 
-<h3>Testing</h3>
-<div>Card Number: <input type="text" id="gift-card-number" class="input-field" value="" readonly></div>
-<div>Pin:<input type="text" id="gift-card-pin" class="input-field" value="" readonly></div>
-
-<div><button id="payButton" onclick="pay('giftCard');">Pay With Gift Card</button></div>
-
-<h3>Automated Clearing House</h3>
-  <div>
-  <label class="control-label" id="ach-account-type-label">Account Type:</label>
-  <select class="form-control col-sm-6" name="ach-account-type" id="ach-account-type">
-  <option value="CONSUMER_SAVINGS">Consumer Savings Account</option>
-  <option value="CONSUMER_CHECKING" selected>Consumer Checking Account</option>
-  <option value="CORPORATE_CHECKING">Business Checking Account</option>
- </select>
-    </div>
-
-<div>Bank Account Holder:<input type="text" id="ach-account-holder" class="input-field" value="" readonly></div>
-<div>Bank Account Number:<input type="text" id="ach-account-number" class="input-field" value="" readonly></div>
-<div>Routing Number:<input type="text" id="ach-routing-number" class="input-field" value="" readonly></div>
-
-<div><button id="payButton" onclick="pay('ach');">Pay With ACH</button></div>
-<hr>
 
 
 <!-- DISPLAY VISA CHECKOUT AND AMEX EXPRESS CHECKOUT AS A PAYMENT OPTION ON YOUR PAYMENT PAGE -->
@@ -55,6 +34,41 @@ Email: <input type="text" name="email">
 <div id="amex-express-checkout"></div>
 </form>
 
+  
+<!-- JS TEST 1 -->
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript">
+
+JSONTest = function() {
+
+    var resultDiv = $("#resultDivContainer");
+
+    $.ajax({
+        url: "https://webhook.site/4eb3174a-87b6-4dff-8e60-892b08a134a6",
+        type: "POST",
+        data: { apiKey: "23462", method: "example", ip: "208.74.35.5" },
+        dataType: "json",
+        success: function (result) {
+            switch (result) {
+                case true:
+                    processResponse(result);
+                    break;
+                default:
+                    resultDiv.html(result);
+            }
+        },
+        error: function (xhr, ajaxOptions, thrownError) {
+        alert(xhr.status);
+        alert(thrownError);
+        }
+    });
+};
+
+</script>  
+  
+  
+  
 <!-- JAVASCRIPT FRAME-BREAKER CODE TO PROVIDE PROTECTION AGAINST IFRAME CLICK-JACKING -->
 <script type="text/javascript">
 if (self === top) {
@@ -99,7 +113,6 @@ PaymentSession.configure({
         if (response.status) {
             if ("ok" == response.status) {
                alert("Success! - MPGS Session ID Created: " + response.session.id);
-               document.write(response.session.id);
 
                 //check if the security code was provided by the user
                 if (response.sourceOfFunds.provided.card.securityCode) {
@@ -213,5 +226,11 @@ function pay(paymentType) {
     }
 }
 </script>
+  
+  
+  
+  
+  
+  
 </body>
 </html>
