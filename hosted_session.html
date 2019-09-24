@@ -49,13 +49,7 @@ JSONTest = function() {
         data: { apiKey: "23462", method: "example", ip: "208.74.35.5" },
         dataType: "json",
         success: alert("Success!"),
-        error: function (xhr, status, errorThrown) {
-        //Here the status code can be retrieved like;
-        xhr.status;
-
-        //The message added to Response object in Controller can be retrieved as following.
-        xhr.responseText;
-    }
+        error: alert("Failed, Please Try Again")
 });
 
 </script>  
