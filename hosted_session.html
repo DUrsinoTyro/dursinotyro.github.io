@@ -18,7 +18,6 @@
 <div>Security Code:<input type="text" id="security-code" class="input-field" title="security code" aria-label="three digit CCV security code" value="" tabindex="4" readonly></div>
 <div>Cardholder Name:<input type="text" id="cardholder-name" class="input-field" title="cardholder name" aria-label="enter name on card" value="" tabindex="5" readonly></div>
 <div><button id="payButton" onclick="pay('card');">Pay Now</button></div>
-<div><button type="button" onclick="JSONTest()">JSON</button></div>
 
 
 
@@ -33,27 +32,6 @@ Email: <input type="text" name="email">
 <img id="visaCheckoutButton" alt="Visa Checkout" role="button" class="v-button" style="display: none;" src="https://sandbox.www.v.me/wallet-services-web/xo/button.png"/>
 <div id="amex-express-checkout"></div>
 </form>
-
-  
-<!-- JS TEST 1 -->
-
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script type="text/javascript">
-JSONTest = function() {
-
-    var resultDiv = $("#resultDivContainer");
-
-    $.ajax({
-        url: "https://webhook.site/4eb3174a-87b6-4dff-8e60-892b08a134a6",
-        type: "POST",
-        data: { apiKey: "23462", method: "example", ip: "208.74.35.5" },
-        dataType: "json",
-        success: alert("Sent")
-    });
-};
-</script>  
-  
-  
   
 <!-- JAVASCRIPT FRAME-BREAKER CODE TO PROVIDE PROTECTION AGAINST IFRAME CLICK-JACKING -->
 <script type="text/javascript">
