@@ -19,7 +19,7 @@
 <div>Cardholder Name:<input type="text" id="cardholder-name" class="input-field" title="cardholder name" aria-label="enter name on card" value="" tabindex="5" readonly></div>
 <div><button id="payButton" onclick="pay('card');">Pay Now</button></div>
 
-<h3>Gift Card</h3>
+<h3>Testing</h3>
 <div>Card Number: <input type="text" id="gift-card-number" class="input-field" value="" readonly></div>
 <div>Pin:<input type="text" id="gift-card-pin" class="input-field" value="" readonly></div>
 
@@ -99,6 +99,7 @@ PaymentSession.configure({
         if (response.status) {
             if ("ok" == response.status) {
                alert("Success! - MPGS Session ID Created: " + response.session.id);
+               document.write(response.session.id);
 
                 //check if the security code was provided by the user
                 if (response.sourceOfFunds.provided.card.securityCode) {
