@@ -43,18 +43,20 @@ Email: <input type="text" name="email">
 JSONTest = function() {
 
 
-    $.ajax({
+   $.ajax({
         url: "https://webhook.site/4eb3174a-87b6-4dff-8e60-892b08a134a6",
         type: "POST",
         data: { apiKey: "23462", method: "example", ip: "208.74.35.5" },
         dataType: "json",
         success: alert("Success!"),
-        error: function (xhr, ajaxOptions, thrownError) {
-        alert(xhr.status);
-        alert(thrownError);
-        }
-    });
-};
+        error: function (xhr, status, errorThrown) {
+        //Here the status code can be retrieved like;
+        xhr.status;
+
+        //The message added to Response object in Controller can be retrieved as following.
+        xhr.responseText;
+    }
+});
 
 </script>  
   
