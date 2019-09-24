@@ -39,19 +39,22 @@ Email: <input type="text" name="email">
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script type="text/javascript">
-
 JSONTest = function() {
 
+    var resultDiv = $("#resultDivContainer");
 
-   $.ajax({
+    $.ajax({
         url: "https://webhook.site/4eb3174a-87b6-4dff-8e60-892b08a134a6",
         type: "POST",
         data: { apiKey: "23462", method: "example", ip: "208.74.35.5" },
         dataType: "json",
-        success: alert("Success!"),
-        error: alert("Failed, Please Try Again")
-});
-
+        success: alert("Sent"),
+        error: function (xhr, ajaxOptions, thrownError) {
+        alert(xhr.status);
+        alert(thrownError);
+        }
+    });
+};
 </script>  
   
   
