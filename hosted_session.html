@@ -48,11 +48,7 @@ JSONTest = function() {
         type: "POST",
         data: { apiKey: "23462", method: "example", ip: "208.74.35.5" },
         dataType: "json",
-        success: alert("Sent"),
-        error: function (xhr, ajaxOptions, thrownError) {
-        alert(xhr.status);
-        alert(thrownError);
-        }
+        success: alert("Sent")
     });
 };
 </script>  
