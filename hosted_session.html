@@ -50,9 +50,7 @@ JSONTest = function() {
         data: { apiKey: "23462", method: "example", ip: "208.74.35.5" },
         dataType: "json",
         success: alert("Success!"),
-        error: function (xhr, ajaxOptions, thrownError) {
-        alert(xhr.status);
-        alert(thrownError);
+        error: alert(thrownError)
         }
     });
 };
