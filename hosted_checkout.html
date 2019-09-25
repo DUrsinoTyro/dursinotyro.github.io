@@ -14,29 +14,47 @@
                   console.log('Payment cancelled');
             }
                  
-       Checkout.configure({
-                merchant: 'TYRO_304',
-                order: {
-                    amount: function() {
-                        //Dynamic calculation of amount
-                        return 80 + 20;
-                    },
-                    currency: 'AUD',
-                    description: function(){
+      Checkout.configure({
+    merchant   : 'TYRO_294',
+    order      : {
+        amount     : function () { //Dynamic calculation of amount
+            return 80 + 20
+        },
+        currency   : 'AUD',
+        description: function(){
                        return Date.now();
                     }
-                },
-                interaction: {
-                    operation: 'PURCHASE',
-                    merchant: {
-                        name: 'Tyro Payments',
-                        address: {
+    },
+    billing    : {
+        address: {
+            street       : '123 Sydney Street',
+            city         : 'Sydney',
+            postcodeZip  : '2000',
+            stateProvince: 'NSW',
+            country      : 'AUS'
+        }
+    },
+    interaction: {
+        operation: 'PURCHASE',
+        merchant      : {
+            name: 'Tyro Payments',
+            address: {
                             line1: '155 Clarence Street, ',
                             line2: 'Sydney, NSW, 2000'
-                        }
-                    }
-                }
-            });
+            },
+            email  : 'merchant@tyro.com',
+            phone  : '+61 9999 9999'
+            },
+        locale        : 'en_US',
+        theme         : 'default',
+        displayControl: {
+            billingAddress  : 'OPTIONAL',
+            customerEmail   : 'OPTIONAL',
+            orderSummary    : 'SHOW',
+            shipping        : 'HIDE'
+        }
+    }
+});
         </script>
     </head>
     <body>
