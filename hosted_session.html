@@ -17,6 +17,10 @@
 <div>Security Code:<input type="text" id="security-code" class="input-field" title="security code" aria-label="three digit CCV security code" value="" tabindex="4" readonly></div>
 <div>Cardholder Name:<input type="text" id="cardholder-name" class="input-field" title="cardholder name" aria-label="enter name on card" value="" tabindex="5" readonly></div>
 <div><button id="payButton" onclick="pay('card');">Pay Now</button></div>
+    
+<div><button id="sessionButton" onclick="sendSession();">Send Now</button></div>
+    
+   
 
 <!-- JAVASCRIPT FRAME-BREAKER CODE TO PROVIDE PROTECTION AGAINST IFRAME CLICK-JACKING -->
 <script type="text/javascript">
@@ -97,5 +101,40 @@ function pay() {
     PaymentSession.updateSessionFromForm('card');
 }
 </script>
+    
+/////////////////////////////////////    
+    
+<script type="text/javascript">
+function sendSession() {
+ var xhr = new XMLHttpRequest();
+xhr.open("POST", "https://test-tyro.mtf.gateway.mastercard.com/api/rest/version/52/merchant/TYRO_294/order/RANDOMID2234/transaction/RANDOMID2234232", true);
+xhr.setRequestHeader('Content-Type', 'application/json');
+xhr.send(JSON.stringify({
+    "apiOperation": "PAY",
+    "order": {
+    	"amount": "10.00",
+    	"currency": "AUD"
+    },
+    "session": {
+    	"id": "SESSION0002173885149I7628385J42"
+    },
+    "sourceOfFunds": {
+    	"type": "CARD"
+    }
+}));
+xhr.onload = function() {
+  console.log("HELLO")
+  console.log(this.responseText);
+  var data = JSON.parse(this.responseText);
+  console.log(data);
+}   
+}
+    
+    
+    
+</script>
+    
+    
+    
 </body>
 </html>
