@@ -15,10 +15,10 @@
             }
                  
       Checkout.configure({
-    merchant   : 'TYRO_304',
+    merchant   : 'TYRO_318',
     order      : {
-        amount     : function () { //Dynamic calculation of amount
-            return 80 + 20
+        amount     : 100,
+        notificationUrl: 'https://webhook.site/4eb3174a-87b6-4dff-8e60-892b08a134a6'              
         },
         currency   : 'AUD',
         description: function(){
