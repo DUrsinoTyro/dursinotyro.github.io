@@ -18,7 +18,7 @@
 <div>Cardholder Name:<input type="text" id="cardholder-name" class="input-field" title="cardholder name" aria-label="enter name on card" value="" tabindex="5" readonly></div>
 <div><button id="payButton" onclick="pay('card');">Get Session ID</button></div>    
 
-<div><button onclick="sendSession()">Click me</button>   
+<div><button id ="sendButton" onclick="sendSession();">Click me</button></div>
 
 <!-- JAVASCRIPT FRAME-BREAKER CODE TO PROVIDE PROTECTION AGAINST IFRAME CLICK-JACKING -->
 <script type="text/javascript">
@@ -100,7 +100,7 @@ function pay() {
 
 <script type="text/javascript">
  // This function sends the session ID to MPGS    
-function(sendSession){
+function (sendSession){
 
 var settings = {
   "async": true,
