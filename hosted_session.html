@@ -8,7 +8,9 @@
 <body>
 
 <!-- CREATE THE HTML FOR THE PAYMENT PAGE -->
+<p><b>PLEASE USE TEST CARD NUMBER: 5111 0100 3017 5156</b></p>
 
+   
 <div>Please enter your payment details:</div>
 <h3>Credit Card</h3>
 <div>Card Number: <input type="text" id="card-number" class="input-field" title="card number" aria-label="enter your card number" value="" tabindex="1" readonly></div>
@@ -51,7 +53,7 @@ PaymentSession.configure({
             // HANDLE RESPONSE FOR UPDATE SESSION
             if (response.status) {
                 if ("ok" == response.status) {
-                    alert("Success! Session ID created: " + response.session.id);
+                    alert("Success! Session ID generated! : " + response.session.id);
   
                     //check if the security code was provided by the user
                     if (response.sourceOfFunds.provided.card.securityCode) {
