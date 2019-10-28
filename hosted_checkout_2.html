@@ -3,7 +3,7 @@
     <head>
         <script src="https://test-tyro.mtf.gateway.mastercard.com/checkout/version/53/checkout.js"
                 data-error="errorCallback"
-                data-cancel="cancelCallback">
+                data-cancel="cancelCallback"
         </script>
 
         <script type="text/javascript">
@@ -13,29 +13,19 @@
             function cancelCallback() {
                   console.log('Payment cancelled');
             }
-
             Checkout.configure({
-                merchant: 'TYRO_318',
-                order: {
-                    amount: function() {
-                        //Dynamic calculation of amount
-                        return 80 + 20;
-                    },
-                    currency: 'AUD',
-                    description: function(){
-                       return Date.now();
-                    }
-                },
-                interaction: {
-                    operation: 'PURCHASE', // set this field to 'PURCHASE' for Hosted Checkout to perform a Pay Operation.
+              session: { 
+            	id: "SESSION0002743541557G68011356G8"
+       			},
+              interaction: {
                     merchant: {
-                        name: 'Tyro Payments',
+                        name: 'Domenic Ursino',
                         address: {
-                            line1: 'Level 1, 155 Clarence Street',
-                            line2: 'Sydney, NSW, 2000'            
+                            line1: '200 Sample St',
+                            line2: '1234 Example Town'            
                         }    
                     }
-                                                                }
+               }
             });
         </script>
     </head>
