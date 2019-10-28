@@ -5,8 +5,7 @@
                 data-error="errorCallback"
                 data-cancel="cancelCallback">
         </script>
-
-         <script type="text/javascript">
+<script type="text/javascript">
             function errorCallback(error) {
                   console.log(JSON.stringify(error));
             }
@@ -17,48 +16,24 @@
             Checkout.configure({
                 merchant: 'TYRO_319',
                 order: {
-                    amount: 100,
+                    amount: 100
                     },
                     currency: 'AUD',
                     description: function(){
                        return Date.now();
-                },
-                billing    : {
-        address: {
-            street       : '123 Sydney Street',
-            city         : 'Sydney',
-            postcodeZip  : '2000',
-            stateProvince: 'NSW',
-            country      : 'AUS'
-        }
-    },
-    interaction: {
-        operation: 'PURCHASE',
-        merchant      : {
-            name: 'Tyro Payments',
-            address: {
-            line1: '155 Clarence Street',
+                    }
                 },
                 interaction: {
+                    operation: 'PURCHASE', // set this field to 'PURCHASE' for Hosted Checkout to perform a Pay Operation.
                     merchant: {
-                        name: 'Tyro Payments',
+                        name: 'Your merchant name',
                         address: {
-                            line1: 'Level 1, 155 Clarence St',
-                            line2: 'Sydney, NSW, 2000'
-            },
-            email  : 'merchant@tyro.com',
-            phone  : '+61 9999 9999'
-            },
-        locale        : 'en_US',
-        theme         : 'default',
-        displayControl: {
-            billingAddress  : 'OPTIONAL',
-            customerEmail   : 'OPTIONAL',
-            orderSummary    : 'SHOW',
-            shipping        : 'HIDE'
-        }
-    }
-});
+                            line1: '200 Sample St',
+                            line2: '1234 Example Town'            
+                        }    
+                    }
+                               }
+            });
         </script>
     </head>
     <body>
