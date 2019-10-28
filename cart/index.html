@@ -1,164 +1,73 @@
-<!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+<script src="cart.js"></script>
+<link rel="stylesheet" type="text/css" href="mystyle.css">
   <meta charset="utf-8">
-  <title>My Shopping Cart</title>
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Basket</title>
 </head>
+
 <body>
-  <div>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">
-          My Shopping Cart
-        </a>
-      </div>
-    </div>
-  </nav>
-  <div class="container">
-    <div class="row">
-      <div class="col col-sm-9">
-        <h1>Products</h1>
-        <div class="row">
-          <div class="col col-xs-12 col-md-6 col-lg-4">
-            <div>
-              <img src="http://lorempixel.com/250/250/">
-            </div>
-            <h2>Product Name</h2>
-            <p>Product Name</p>
-            <p>$10.99</p>
-          </div>
-          <div class="col col-xs-12 col-md-6 col-lg-4">
-            <div>
-              <img src="http://lorempixel.com/250/250/">
-            </div>
-            <h2>Product Name</h2>
-            <p>Product Name</p>
-            <p>$10.99</p>
-          </div>
-          <div class="col col-xs-12 col-md-6 col-lg-4">
-            <div>
-              <img src="http://lorempixel.com/250/250/">
-            </div>
-            <h2>Product Name</h2>
-            <p>Product Name</p>
-            <p>$10.99</p>
-          </div>
-          <div class="col col-xs-12 col-md-6 col-lg-4">
-            <div>
-              <img src="http://lorempixel.com/250/250/">
-            </div>
-            <h2>Product Name</h2>
-            <p>Product Name</p>
-            <p>$10.99</p>
-          </div>
-          <div class="col col-xs-12 col-md-6 col-lg-4">
-            <div>
-              <img src="http://lorempixel.com/250/250/">
-            </div>
-            <h2>Product Name</h2>
-            <p>Product Name</p>
-            <p>$10.99</p>
-          </div>
-          <div class="col col-xs-12 col-md-6 col-lg-4">
-            <div>
-              <img src="http://lorempixel.com/250/250/">
-            </div>
-            <h2>Product Name</h2>
-            <p>Product Name</p>
-            <p>$10.99</p>
-          </div>
-          <div class="col col-xs-12 col-md-6 col-lg-4">
-            <div>
-              <img src="http://lorempixel.com/250/250/">
-            </div>
-            <h2>Product Name</h2>
-            <p>Product Name</p>
-            <p>$10.99</p>
-          </div>
-          <div class="col col-xs-12 col-md-6 col-lg-4">
-            <div>
-              <img src="http://lorempixel.com/250/250/">
-            </div>
-            <h2>Product Name</h2>
-            <p>Product Name</p>
-            <p>$10.99</p>
-          </div>
-          <div class="col col-xs-12 col-md-6 col-lg-4">
-            <div>
-              <img src="http://lorempixel.com/250/250/">
-            </div>
-            <h2>Product Name</h2>
-            <p>Product Name</p>
-            <p>$10.99</p>
-          </div>
-          <div class="col col-xs-12 col-md-6 col-lg-4">
-            <div>
-              <img src="http://lorempixel.com/250/250/">
-            </div>
-            <h2>Product Name</h2>
-            <p>Product Name</p>
-            <p>$10.99</p>
-          </div>
-          <div class="col col-xs-12 col-md-6 col-lg-4">
-            <div>
-              <img src="http://lorempixel.com/250/250/">
-            </div>
-            <h2>Product Name</h2>
-            <p>Product Name</p>
-            <p>$10.99</p>
-          </div>
-          <div class="col col-xs-12 col-md-6 col-lg-4">
-            <div>
-              <img src="http://lorempixel.com/250/250/">
-            </div>
-            <h2>Product Name</h2>
-            <p>Product Name</p>
-            <p>$10.99</p>
-          </div>
-          <div class="col col-xs-12 col-md-6 col-lg-4">
-            <div>
-              <img src="http://lorempixel.com/250/250/">
-            </div>
-            <h2>Product Name</h2>
-            <p>Product Name</p>
-            <p>$10.99</p>
-          </div>
-          <div class="col col-xs-12 col-md-6 col-lg-4">
-            <div>
-              <img src="http://lorempixel.com/250/250/">
-            </div>
-            <h2>Product Name</h2>
-            <p>Product Name</p>
-            <p>$10.99</p>
-          </div>
-          <div class="col col-xs-12 col-md-6 col-lg-4">
-            <div>
-              <img src="http://lorempixel.com/250/250/">
-            </div>
-            <h2>Product Name</h2>
-            <p>Product Name</p>
-            <p>$10.99</p>
-          </div>
+  <main>
+    <div class="basket">
 
-        </div>
+      <div class="basket-labels">
+        <ul>
+          <li class="item item-heading">Item</li>
+          <li class="price">Price</li>
+          <li class="quantity">Quantity</li>
+          <li class="subtotal">Subtotal</li>
+        </ul>
       </div>
-      <div class="col col-sm-3">
-        <h1>Shopping Cart</h1>
-        <div class="cart">
+      <div class="basket-product">
+        <div class="item">
+          <div class="product-image">
+            <img src="http://cdn.http.vanheusen.com.au/images/D/vlerx20w_ccsb_01-1500528636-350x420.jpg" alt="Placholder Image 2" class="product-frame">
+          </div>
+          <div class="product-details">
+            <h1><strong><span class="item-quantity">4</span> x Blue Shirt</strong></h1>
+            <p><strong>Navy, Size L</strong></p>
+            <p>Product Code - 232321939</p>
+          </div>
+        </div>
+        <div class="price">26.00</div>
+        <div class="quantity">
+          <input type="number" value="4" min="1" class="quantity-field">
+        </div>
+        <div class="subtotal">104.00</div>
+        <div class="remove">
+          <button>Remove</button>
         </div>
       </div>
     </div>
-  </div>
-</div>
-
-  <script
-  src="http://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  <script src="cart.js"></script>
+    <aside>
+      <div class="summary">
+        <div class="summary-total-items"><span class="total-items"></span> Items in your Bag</div>
+        <div class="summary-subtotal">
+          <div class="subtotal-title">Subtotal</div>
+          <div class="subtotal-value final-value" id="basket-subtotal">130.00</div>
+          <div class="summary-promo hide">
+            <div class="promo-title">Promotion</div>
+            <div class="promo-value final-value" id="basket-promo"></div>
+          </div>
+        </div>
+        <div class="summary-delivery">
+          <select name="delivery-collection" class="summary-delivery-selection">
+              <option value="0" selected="selected">Express Delivery</option>
+          </select>
+        </div>
+        <div class="summary-total">
+          <div class="total-title">Total</div>
+          <div class="total-value final-value" id="basket-total">130.00</div>
+        </div>
+        <div class="summary-checkout">
+          <button class="checkout-cta">Go to Secure Checkout</button>
+        </div>
+      </div>
+    </aside>
+  </main>
 </body>
+
 </html>
