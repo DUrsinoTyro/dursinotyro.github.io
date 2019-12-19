@@ -12,4 +12,13 @@
         Buy Now
 </button>
     
+<script>
+    SimplifyCommerce.hostedPayments(
+        function(response) {
+            console.log(response);
+            // add your custom handler code here
+        }
+    ).closeOnCompletion();
+</script>    
+    
 </html>
