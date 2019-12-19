@@ -1,48 +1,15 @@
 
 <html>
-    <head>
-        <script src="https://test-tyro.mtf.gateway.mastercard.com/checkout/version/53/checkout.js"
-                data-error="errorCallback"
-                data-cancel="cancelCallback">
-        </script>
-
-        <script type="text/javascript">
-            function errorCallback(error) {
-                  console.log(JSON.stringify(error));
-            }
-            function cancelCallback() {
-                  console.log('Payment cancelled');
-            }
-
-            Checkout.configure({
-                merchant: 'TYRO_318',
-                order: {
-                    amount: function() {
-                        //Dynamic calculation of amount
-                        return 80 + 20;
-                    },
-                    currency: 'AUD',
-                    description: function(){
-                       return Date.now();
-                    }
-                },
-                interaction: {
-                    operation: 'PURCHASE', // set this field to 'PURCHASE' for Hosted Checkout to perform a Pay Operation.
-                    merchant: {
-                        name: 'Tyro Payments',
-                        address: {
-                            line1: 'Level 1, 155 Clarence Street',
-                            line2: 'Sydney, NSW, 2000'            
-                        }    
-                    }
-                                                                }
-            });
-        </script>
-    </head>
-    <body>
-        ...
-        <input type="button" value="Pay with Lightbox" onclick="Checkout.showLightbox();" />
-        <input type="button" value="Pay with Payment Page" onclick="Checkout.showPaymentPage();" />
-        ...
-    </body>
+    
+<script type="text/javascript"
+        src="https://www.simplify.com/commerce/simplify.pay.js"></script>
+<button data-sc-key="lvpb_M2JiMDgyZGEtYmRlNS00ZGQ4LTk4MzMtYzI0MDEwY2Y0M2Zm"
+        data-name="Jasmine Green Tea"
+        data-description="Smooth tea with a rich jasmine bouquet"
+        data-reference="99999"
+        data-amount="1000"
+        data-color="#12B830">
+        Buy Now
+</button>
+    
 </html>
