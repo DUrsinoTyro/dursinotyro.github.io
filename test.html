@@ -1,39 +1,27 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
-<title>My jQuery JSON Web Page</title>
-<head>
-<!-- JS TEST 1 -->
 
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script type="text/javascript">
-JSONTest = function() {
+    function submit()
+    {
+        document.getElementById("startrunning").click(); // Simulates button click
+        document.submitForm.submit(); // Submits the form without the button
+    }
+</script>
 
-    var resultDiv = $("#resultDivContainer");
+<script type="text/javascript"
 
-    $.ajax({
-        url: "https://test-tyro.mtf.gateway.mastercard.com/api/nvp/version/53",
-        type: "POST",
-        data: 
-        {
-        apiOperation: "PAY", 
-        order: {
-            currency: "AUD"
-            id: TEST1234029A,
-            session.id: SESSION0002122400777L8592306N84
-            }
-        }
-        dataType: "json",
-        success: alert("Sent")
-    });
-};
-</script>  
-<body>
+src="https://www.simplify.com/commerce/simplify.pay.js">
+        
+</script>
 
-<h1>My jQuery JSON Web Page</h1>
-
-<div id="resultDivContainer"></div>
-
-<button type="button" onclick="JSONTest()">JSON</button>
-
+<body onload="submit()">
+<p hidden><button id="startrunning" data-sc-key="sbpb_M2M0ZTk2Y2ItNTcxMi00Y2QxLWJmNTctNzg4ZjEzMGMzY2Nj"
+        data-name="Jasmine Green Tea"
+        data-description="Smooth tea with a rich jasmine bouquet"
+        data-reference="99999"
+        data-amount="3000"
+        data-color="#12B830">
+        Buy Now
+</button></p>
 </body>
-</html> 
+</html>
