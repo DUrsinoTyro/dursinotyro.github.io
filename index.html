@@ -13,27 +13,22 @@
                   console.log('Payment cancelled');
             }
 
-            Checkout.configure({
-                merchant: 'TESTTYRO_318',
+     Checkout.configure({
+              session: { 
+            	id: 'SESSION0002897934732I5100202M17'
+       			},
                 order: {
-                    amount: function() {
-                        //Dynamic calculation of amount
-                        return 80 + 20;
-                    },
-                    currency: 'AUD',
-                    description: 'Ordered goods',
-                    id: Date.now()
+                    description: 'Ordered goods'
                 },
-                interaction: {
+              interaction: {
                     merchant: {
                         name: 'Your merchant name',
                         address: {
                             line1: '200 Sample St',
-                            line2: '1234 Example Town'
-                        }
-                    },
-                    operation:'PURCHASE'
-                }
+                            line2: '1234 Example Town'            
+                        }    
+                    }
+               }
             });
         </script>
     </head>
