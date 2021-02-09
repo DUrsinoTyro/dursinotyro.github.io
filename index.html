@@ -1,33 +1,46 @@
+<html>
+    <head>
+        <script src="https://tyro.gateway.mastercard.com/checkout/version/53/checkout.js"
+                data-error="errorCallback"
+                data-cancel="cancelCallback">
+        </script>
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Pay by Card</title>
-	<link rel="icon" href="../assets/images/dummy-favicon.ico" type="image/x-icon" />
+        <script type="text/javascript">
+            function errorCallback(error) {
+                  console.log(JSON.stringify(error));
+            }
+            function cancelCallback() {
+                  console.log('Payment cancelled');
+            }
 
-    <!--Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    <!-- Bootstrap core CSS -->
-<link rel="stylesheet" href="../assets/css/vendor/bootstrap.min.css">
-
-<!-- Propeller css -->
-<link href="../assets/css/propeller.min.css" rel="stylesheet">
-</head>
-<body>
-<script type="text/javascript"
-        src="https://www.simplify.com/commerce/simplify.pay.js">
-</script>
-<iframe name="my-hosted-form"
-        data-sc-key="sbpb_ZDBhMWMzMTctNmFlNS00NjRmLTg5NTEtZWJjNTYyOTNjNzA5"
-        data-name="MyLiquorStore"
-        data-description="Online"
-        data-reference="99999"
-        data-amount="100"
-        data-color="#12B830" frameBorder="0" height="600px">
-</iframe>
-</body>
+            Checkout.configure({
+                merchant: 'TYRO_68233',
+                order: {
+                    amount: function() {
+                        //Dynamic calculation of amount
+                        return 80 + 20;
+                    },
+                    currency: 'AUD',
+                    description: 'Ordered goods',
+                    id: 'TYRO_71572'
+                },
+                interaction: {
+                    merchant: {
+                        name: 'Your merchant name',
+                        address: {
+                            line1: '200 Sample St',
+                            line2: '1234 Example Town'
+                        }
+                    },
+                    operation: 'PURCHASE'
+                }
+            });
+        </script>
+    </head>
+    <body>
+        ...
+        <input type="button" value="Pay with Lightbox" onclick="Checkout.showLightbox();" />
+        <input type="button" value="Pay with Payment Page" onclick="Checkout.showPaymentPage();" />
+        ...
+    </body>
 </html>
-
